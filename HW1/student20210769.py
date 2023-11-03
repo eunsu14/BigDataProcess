@@ -23,14 +23,17 @@ rank = [sorted(total_list, reverse=True).index(i) + 1 for i in total_list]
 
 stuNum = ws.max_row - 1
 
+print(rank)
 a = math.trunc(stuNum * 0.15)
 n = 0
+sum = 0
 i = 1
 while a > 0:        
     if (rank.count(i) <= a):
         num = list(filter(lambda x : rank[x] == i, range(len(rank))))
         a -= rank.count(i)
         n += rank.count(i)
+        sum += n
         for j in num:
             rank[j] = 'A+'
     else:
@@ -42,6 +45,7 @@ while a0 > 0:
     if (rank.count(i) <= a0):
         num = list(filter(lambda x : rank[x] == i, range(len(rank))))
         a0 -= rank.count(i)
+        sum += n
         for j in num:
             rank[j] = 'A0'
     else:
@@ -54,6 +58,7 @@ while b > 0:
     if (rank.count(i) <= b):
         num = list(filter(lambda x : rank[x] == i, range(len(rank))))
         b -= rank.count(i)
+        sum += n
         n += rank.count(i)
         for j in num:
             rank[j] = 'B+'
@@ -61,29 +66,17 @@ while b > 0:
         break
     i += 1
 
-if n != 0:
-    b0 = math.trunc(stuNum * 0.4) - n
-    while b0 > 0:
-        if (rank.count(i) <= b0):
-            num = list(filter(lambda x : rank[x] == i, range(len(rank))))
-            b0 -= rank.count(i)
-            for j in num:
-                rank[j] = 'B0'
-        else:
-            break
-        i += 1
-else:
-    b0 = math.trunc(stuNum * 0.7) - n
-    while b0 > 0:
-        if (rank.count(i) <= b0):
-            num = list(filter(lambda x : rank[x] == i, range(len(rank))))
-            b0 -= rank.count(i)
-            for j in num:
-                rank[j] = 'B0'
-        else:
-            break
-        i += 1
-        
+b0 = math.trunc(stuNum * 0.4) - n
+while b0 > 0:
+    if (rank.count(i) <= b0):
+        num = list(filter(lambda x : rank[x] == i, range(len(rank))))
+        b0 -= rank.count(i)
+        for j in num:
+            rank[j] = 'B0'
+    else:
+        break
+    i += 1
+
 n = 0
 c = math.trunc(stuNum * 0.15)
 while c > 0:
