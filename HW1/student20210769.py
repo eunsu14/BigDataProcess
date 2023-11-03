@@ -31,7 +31,6 @@ while a > 0:
         num = list(filter(lambda x : rank[x] == i, range(len(rank))))
         a -= rank.count(i)
         n += rank.count(i)
-        sum += n
         for j in num:
             rank[j] = 'A+'
     else:
@@ -43,7 +42,6 @@ while a0 > 0:
     if (rank.count(i) <= a0):
         num = list(filter(lambda x : rank[x] == i, range(len(rank))))
         a0 -= rank.count(i)
-        sum += n
         for j in num:
             rank[j] = 'A0'
     else:
@@ -56,7 +54,6 @@ while b > 0:
     if (rank.count(i) <= b):
         num = list(filter(lambda x : rank[x] == i, range(len(rank))))
         b -= rank.count(i)
-        sum += n
         n += rank.count(i)
         for j in num:
             rank[j] = 'B+'
