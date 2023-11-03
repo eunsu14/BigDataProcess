@@ -25,7 +25,6 @@ stuNum = ws.max_row - 1
 
 a = math.trunc(stuNum * 0.15)
 n = 0
-sum = 0
 i = 1
 while a > 0:        
     if (rank.count(i) <= a):
