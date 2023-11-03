@@ -65,8 +65,8 @@ while b > 0:
         break
     i += 1
 
-if (sum <= math.trunc(stuNum * 0.7)):
-    b0 = math.trunc(stuNum * 0.7) - sum 
+if (sum <= math.trunc(stuNum * 0.7) - sum):
+    b0 = math.trunc(stuNum * 0.7) - sum
 else: 
     b0 = math.trunc(stuNum * 0.4) - n
 
