@@ -23,7 +23,6 @@ rank = [sorted(total_list, reverse=True).index(i) + 1 for i in total_list]
 
 stuNum = ws.max_row - 1
 
-print(rank)
 a = math.trunc(stuNum * 0.15)
 n = 0
 sum = 0
