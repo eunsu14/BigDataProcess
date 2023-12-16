@@ -38,12 +38,12 @@ def classify0(inX, dataSet, labels, k):
 
 # 에러율 계산 - 인식한 결과와 실제 라벨을 비교
 def compare_predictions(predicted_result, labels):
-        cnt = 0
-        length = len(predicted_result)
-        for i in range(length):
+        cnt = 0 # 예측을 실패한 경우
+        file_cnt = len(predicted_result)
+        for i in range(file_cnt):
                 if (predicted_result[i] != labels[i]):
                         cnt += 1
-        result = round(cnt / length * 100)
+        result = round(cnt / file_cnt * 100)
         return result
 
 # Main
